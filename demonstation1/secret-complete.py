@@ -1,7 +1,7 @@
 from PIL import Image;
 import os;
 
-PRANK_FOLDER_PATH = "./secret/";
+SECRET_FOLDER_PATH = "./secret/";
 
 def isImage(path):
   try:
@@ -10,7 +10,7 @@ def isImage(path):
   except IOError:
     return False;
 
-for fileName in os.listdir(PRANK_FOLDER_PATH):
-  if isImage(PRANK_FOLDER_PATH + fileName):
+for fileName in os.listdir(SECRET_FOLDER_PATH):
+  if isImage(SECRET_FOLDER_PATH + fileName):
     newName = ''.join(char for char in fileName if not char.isdigit());
-    os.rename(PRANK_FOLDER_PATH + fileName, PRANK_FOLDER_PATH + newName);
+    os.rename(SECRET_FOLDER_PATH + fileName, SECRET_FOLDER_PATH + newName);
